@@ -14,7 +14,8 @@ import SendIcon from '@mui/icons-material/Send';
 import { times } from 'lodash';
 
 
-const APIURL = "http://127.0.0.1:5000"
+const APIURL = "https://art-workbench-api.herokuapp.com/"
+const WEBSERVERURL = "https://bucolic-gnome-8117cd.netlify.app/"
 let miradorInstance;
 
 async function fetchAuthors(){
@@ -26,7 +27,7 @@ async function fetchAuthors(){
 }
 
 async function fetchResources(){
-  return await fetch(APIURL + "/resources" + "?id=&authorName=&authorBirthdate=&authorDeathdate=&creationYear=&description=")
+  return await fetch(APIURL + "/resources")
     .then(function(promise){
       if (promise.status != 200){
         return []
@@ -37,8 +38,6 @@ async function fetchResources(){
     })
     
 }
-
-
 
 class KmskbComponent extends Component {
   constructor(props){
@@ -52,7 +51,7 @@ class KmskbComponent extends Component {
   handleResourceLookup(event){
     if (!this.state.loading){
       this.setState({"loading": true});
-      fetch(APIURL + "/resources?id=&authorName=&authorBirthdate=&authorDeathdate=&creationYear=&description=&bulkmetadata=" + document.querySelector("#textInput").value).then(resp => resp.json())
+      fetch(APIURL + "/resources/" + document.querySelector("#textInput").value).then(resp => resp.json())
       .then(filteredResources => this.setState({"resources" : filteredResources})).then(() => this.setState({"loading": false}));
     } 
   }
@@ -97,7 +96,6 @@ class KmskbComponent extends Component {
       var action2 = mirador.actions.setCanvas(windowId, manifest)
       
       miradorInstance.store.dispatch(action2);
-      console.log(miradorInstance.store.getState())
     });
   }
 
@@ -109,7 +107,6 @@ class KmskbComponent extends Component {
       resources = this.props.resources;
       this.setState({"resources" : resources})
     }
-    console.log("add")
     return (React.createElement('div', {
       style: {
         height: '100%',
@@ -202,7 +199,7 @@ function ManifestListItem(options){
         }
       }
       
-      let manifestId = "http://127.0.0.1:8887/biiif-npm-version/paintings/" + (resource[0].replaceAll("/", "")).replaceAll(" ", "") + "/index.json";
+      let manifestId = WEBSERVERURL + (resource[0].replaceAll("/", "")).replaceAll(" ", "") + "/index.json";
       let imageUrlOld = resource[4].split("/").slice(0,5)
       let imageUrlNew = imageUrlOld.join().concat(["/internet", resource[4].split("/").at(-1)]).replaceAll(",", "/")
       let thumbnail = imageUrlNew.replace(/H./, "L.");
@@ -311,7 +308,7 @@ function ManifestListItem(options){
 }
 
 function initialiseMirador(){
-  const endpointUrl = "http://127.0.0.1:5000/annotations";
+  const endpointUrl = APIURL + "/annotations";
   const config = {
     annotation: {
       adapter: (id) => new CustomFlaskAdapter(id, endpointUrl)
