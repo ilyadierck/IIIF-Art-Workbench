@@ -203,6 +203,7 @@ function ManifestListItem(options){
       let imageUrlOld = resource[4].split("/").slice(0,5)
       let imageUrlNew = imageUrlOld.join().concat(["/internet", resource[4].split("/").at(-1)]).replaceAll(",", "/")
       let thumbnail = imageUrlNew.replace(/H./, "L.");
+      console.log(thumbnail)
 
       return /*#__PURE__*/React.createElement(ListItem, {
           divider: true,
@@ -294,7 +295,7 @@ function ManifestListItem(options){
           sm: 2
         }, manifestLogo && /*#__PURE__*/React.createElement(Img, {
           src: [thumbnail],
-          alt: "",
+          alt: "Painting alt",
           role: "presentation",
           //className: classes.logo,
           unloader: /*#__PURE__*/React.createElement(Skeleton, {
