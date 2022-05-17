@@ -1,0 +1,195 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/index.json",
+  "type": "Manifest",
+  "items": [
+    {
+      "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/index.json/canvas/0",
+      "type": "Canvas",
+      "items": [
+        {
+          "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/index.json/canvas/0/annotationpage/0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/index.json/canvas/0/annotation/0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/Ensor-4189dig-H.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "label": {
+                  "@none": [
+                    "Portrait of the Artist's Mother"
+                  ]
+                },
+                "width": 1836,
+                "height": 2294,
+                "service": [
+                  {
+                    "@id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/+tiles",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              },
+              "target": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/index.json/canvas/0"
+            }
+          ]
+        }
+      ],
+      "label": {
+        "@none": [
+          "Portrait of the Artist's Mother"
+        ]
+      },
+      "metadata": [
+        {
+          "label": {
+            "@none": [
+              "Author"
+            ]
+          },
+          "value": {
+            "@none": [
+              "unknown (1860-1949)"
+            ]
+          }
+        },
+        {
+          "label": {
+            "@none": [
+              "Creation year"
+            ]
+          },
+          "value": {
+            "@none": [
+              "1882"
+            ]
+          }
+        },
+        {
+          "label": {
+            "@none": [
+              "Description"
+            ]
+          },
+          "value": {
+            "@none": [
+              "painting (Dept. Modern Art)"
+            ]
+          }
+        },
+        {
+          "label": {
+            "@none": [
+              "Inventaris number"
+            ]
+          },
+          "value": {
+            "@none": [
+              "4189"
+            ]
+          }
+        },
+        {
+          "label": {
+            "@none": [
+              "Link to more info"
+            ]
+          },
+          "value": {
+            "@none": [
+              "<a href=http://193.190.214.119/fabritiusweb/LinkToVubis.csp?DataBib=2:1803&Language=eng>Fabritius</a>"
+            ]
+          }
+        }
+      ],
+      "width": 1836,
+      "height": 2294,
+      "thumbnail": [
+        {
+          "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/thumb.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "label": {
+    "@none": [
+      "Portrait of the Artist's Mother"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "@none": [
+          "Author"
+        ]
+      },
+      "value": {
+        "@none": [
+          "unknown (1860-1949)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Creation year"
+        ]
+      },
+      "value": {
+        "@none": [
+          "1882"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Description"
+        ]
+      },
+      "value": {
+        "@none": [
+          "painting (Dept. Modern Art)"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Inventaris number"
+        ]
+      },
+      "value": {
+        "@none": [
+          "4189"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Link to more info"
+        ]
+      },
+      "value": {
+        "@none": [
+          "<a href=http://193.190.214.119/fabritiusweb/LinkToVubis.csp?DataBib=2:1803&Language=eng>Fabritius</a>"
+        ]
+      }
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "http://127.0.0.1:8887/biiif-npm-version/paintings/4189/thumb.jpg",
+      "type": "Image"
+    }
+  ]
+}
