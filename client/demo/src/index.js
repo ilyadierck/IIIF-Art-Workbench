@@ -203,6 +203,8 @@ function ManifestListItem(options){
       let imageUrlOld = resource[4].split("/").slice(0,5)
       let imageUrlNew = imageUrlOld.join().concat(["/internet", resource[4].split("/").at(-1)]).replaceAll(",", "/")
       let thumbnail = imageUrlNew.replace(/H./, "L.");
+      thumbnail = "images/" + resource[4].split("/").at(-1).replace(/H./, "L.");
+      console.log(thumbnail)
 
       return /*#__PURE__*/React.createElement(ListItem, {
           divider: true,
@@ -237,8 +239,7 @@ function ManifestListItem(options){
           sm: 3,
           component: "span"
         }, /*#__PURE__*/React.createElement(Img, {
-          className: ns('manifest-list-item-thumb'),
-          src: thumbnail,
+          src: "https://bucolic-gnome-8117cd.netlify.app/1/thumb.jpg",
           alt: "title",
           height: "80",
         })), /*#__PURE__*/React.createElement(Grid, {
@@ -293,7 +294,7 @@ function ManifestListItem(options){
           xs: 4,
           sm: 2
         }, manifestLogo && /*#__PURE__*/React.createElement(Img, {
-          src: thumbnail,
+          src: "",
           alt: "Painting alt",
           role: "presentation",
           //className: classes.logo,
