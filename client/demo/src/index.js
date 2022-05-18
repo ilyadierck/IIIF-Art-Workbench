@@ -14,7 +14,8 @@ import SendIcon from '@mui/icons-material/Send';
 import { times } from 'lodash';
 
 
-const APIURL = "https://art-workbench-api.herokuapp.com/"
+//const APIURL = "https://art-workbench-api.herokuapp.com/"
+const APIURL = "http://127.0.0.1:5000/"
 const WEBSERVERURL = "https://bucolic-gnome-8117cd.netlify.app/"
 let miradorInstance;
 
@@ -49,9 +50,16 @@ class KmskbComponent extends Component {
   }
 
   handleResourceLookup(event){
+    let searchValue = document.querySelector("#textInput").value
+    let apiurl = ""
+    if (searchValue === ""){
+      apiurl =APIURL + "/resources"
+    } else{
+      apiurl =APIURL + "/resources/" + searchValue
+    }
     if (!this.state.loading){
       this.setState({"loading": true});
-      fetch(APIURL + "/resources/" + document.querySelector("#textInput").value).then(resp => resp.json())
+      fetch(apiurl).then(resp => resp.json())
       .then(filteredResources => this.setState({"resources" : filteredResources})).then(() => this.setState({"loading": false}));
     } 
   }
