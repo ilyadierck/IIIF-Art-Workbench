@@ -14,7 +14,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { times } from 'lodash';
 
 
-const APIURL = "https://art-workbench-api.herokuapp.com/"
+const APIURL = "https://ilyadierckens.pythonanywhere.com"
 const WEBSERVERURL = "https://bucolic-gnome-8117cd.netlify.app/"
 let miradorInstance;
 
